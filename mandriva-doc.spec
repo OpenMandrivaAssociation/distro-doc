@@ -270,7 +270,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -289,7 +289,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -308,7 +308,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -334,7 +334,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -353,7 +353,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -372,7 +372,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -405,7 +405,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -431,7 +431,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -450,7 +450,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -476,7 +476,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
@@ -495,7 +495,7 @@ Icon=documentation_section
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=X-MandrivaLinux-MoreApplications-Documentation
+Categories=X-MandrivaLinux-MoreApplications-Documentation;
 EOF
 
 # install manuals
