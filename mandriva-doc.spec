@@ -5,10 +5,10 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2008.0
-Release:	%mkrel 0.5
+Release:	%mkrel 0.6
 License:	Open Publication License
 Group:		%group
-Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation/
+Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
 
 Source0:	%name-%version.tar.bz2
 Source1:	%name.tar.bz2
@@ -296,26 +296,26 @@ installation procedure of %distrib_name
 
 %build
 
-make -C en Master-Starter.html
-make -C en Master-DrakX-Guide.html
-make -C en Master-Drakxtools-Guide.html
-make -C en Master-DVD-Booklet.html
-make -C fr Master-Starter.html
-make -C fr Master-DrakX-Guide.html
-make -C fr Master-Drakxtools-Guide.html
-make -C fr Master-DVD-Booklet.html
-make -C pt_br Master-DrakX-Guide.html
-make -C pt_br Master-Drakxtools-Guide.html
-make -C pt_br Master-DVD-Booklet.html
-make -C it Master-Starter.html
-make -C it Master-DrakX-Guide.html
-make -C it Master-Drakxtools-Guide.html
-make -C de Master-Starter.html
-make -C de Master-DrakX-Guide.html
-make -C de Master-Drakxtools-Guide.html
-make -C es Master-Starter.html
-make -C es Master-DrakX-Guide.html
-make -C es Master-Drakxtools-Guide.html
+make -C publications Starter.en.html
+make -C publications DrakX-Guide.en.html
+make -C publications Drakxtools-Guide.en.html
+make -C publications DVD-Booklet.en.html
+make -C publications Starter.fr.html
+make -C publications DrakX-Guide.fr.html
+make -C publications Drakxtools-Guide.fr.html
+make -C publications DVD-Booklet.fr.html
+make -C publications DrakX-Guide.pt_br.html
+make -C publications Drakxtools-Guide.pt_br.html
+make -C publications DVD-Booklet.pt_br.html
+make -C publications Starter.it.html
+make -C publications DrakX-Guide.it.html
+make -C publications Drakxtools-Guide.it.html
+make -C publications Starter.de.html
+make -C publications DrakX-Guide.de.html
+make -C publications Drakxtools-Guide.de.html
+make -C publications Starter.es.html
+make -C publications DrakX-Guide.es.html
+make -C publications Drakxtools-Guide.es.html
 
 
 %install
@@ -347,7 +347,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/en/
 install -d -m 0755 $DESTDIR/mandriva/en/Starter/
-mv en/Master-Starter.html $DESTDIR/mandriva/en/Starter/Starter.html
+mv publications/Starter.en.html $DESTDIR/mandriva/en/Starter/Starter.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -366,7 +366,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/en/
 install -d -m 0755 $DESTDIR/mandriva/en/Drakxtools-Guide/
-mv en/Master-Drakxtools-Guide.html $DESTDIR/mandriva/en/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/Drakxtools-Guide.en.html $DESTDIR/mandriva/en/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -385,11 +385,11 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/en/
 install -d -m 0755 $DESTDIR/mandriva/en/DVD-Booklet/
-mv en/Master-DVD-Booklet.html $DESTDIR/mandriva/en/DVD-Booklet/DVD-Booklet.html
+mv publications/DVD-Booklet.en.html $DESTDIR/mandriva/en/DVD-Booklet/DVD-Booklet.html
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/en/
-    for f in en/Master-DrakX-Guide.html/*.html; do
+    for f in publications/DrakX-Guide.en.html/*.html; do
     i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
     mv $f %buildroot/%_docdir/installer-help/en/$i
 done
@@ -411,7 +411,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/fr/
 install -d -m 0755 $DESTDIR/mandriva/fr/Starter/
-mv fr/Master-Starter.html $DESTDIR/mandriva/fr/Starter/Starter.html
+mv publications/Starter.fr.html $DESTDIR/mandriva/fr/Starter/Starter.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -430,7 +430,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/fr/
 install -d -m 0755 $DESTDIR/mandriva/fr/Drakxtools-Guide/
-mv fr/Master-Drakxtools-Guide.html $DESTDIR/mandriva/fr/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/Drakxtools-Guide.fr.html $DESTDIR/mandriva/fr/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -449,11 +449,11 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/fr/
 install -d -m 0755 $DESTDIR/mandriva/fr/DVD-Booklet/
-mv fr/Master-DVD-Booklet.html $DESTDIR/mandriva/fr/DVD-Booklet/DVD-Booklet.html
+mv publications/DVD-Booklet.fr.html $DESTDIR/mandriva/fr/DVD-Booklet/DVD-Booklet.html
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/fr/
-    for f in fr/Master-DrakX-Guide.html/*.html; do
+    for f in publications/DrakX-Guide.fr.html/*.html; do
     i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
     mv $f %buildroot/%_docdir/installer-help/fr/$i
 done
@@ -475,7 +475,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/pt_br/
 install -d -m 0755 $DESTDIR/mandriva/pt_br/Drakxtools-Guide/
-mv pt_br/Master-Drakxtools-Guide.html $DESTDIR/mandriva/pt_br/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/Drakxtools-Guide.pt_br.html $DESTDIR/mandriva/pt_br/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -494,11 +494,11 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/pt_br/
 install -d -m 0755 $DESTDIR/mandriva/pt_br/DVD-Booklet/
-mv pt_br/Master-DVD-Booklet.html $DESTDIR/mandriva/pt_br/DVD-Booklet/DVD-Booklet.html
+mv publications/DVD-Booklet.pt_br.html $DESTDIR/mandriva/pt_br/DVD-Booklet/DVD-Booklet.html
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/pt_br/
-    for f in pt_br/Master-DrakX-Guide.html/*.html; do
+    for f in publications/DrakX-Guide.pt_br.html/*.html; do
     i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
     mv $f %buildroot/%_docdir/installer-help/pt_br/$i
 done
@@ -520,7 +520,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/it/
 install -d -m 0755 $DESTDIR/mandriva/it/Starter/
-mv it/Master-Starter.html $DESTDIR/mandriva/it/Starter/Starter.html
+mv publications/Starter.it.html $DESTDIR/mandriva/it/Starter/Starter.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -539,11 +539,11 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/it/
 install -d -m 0755 $DESTDIR/mandriva/it/Drakxtools-Guide/
-mv it/Master-Drakxtools-Guide.html $DESTDIR/mandriva/it/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/Drakxtools-Guide.it.html $DESTDIR/mandriva/it/Drakxtools-Guide/Drakxtools-Guide.html
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/it/
-    for f in it/Master-DrakX-Guide.html/*.html; do
+    for f in publications/DrakX-Guide.it.html/*.html; do
     i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
     mv $f %buildroot/%_docdir/installer-help/it/$i
 done
@@ -565,7 +565,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/de/
 install -d -m 0755 $DESTDIR/mandriva/de/Starter/
-mv de/Master-Starter.html $DESTDIR/mandriva/de/Starter/Starter.html
+mv publications/Starter.de.html $DESTDIR/mandriva/de/Starter/Starter.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -584,11 +584,11 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/de/
 install -d -m 0755 $DESTDIR/mandriva/de/Drakxtools-Guide/
-mv de/Master-Drakxtools-Guide.html $DESTDIR/mandriva/de/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/Drakxtools-Guide.de.html $DESTDIR/mandriva/de/Drakxtools-Guide/Drakxtools-Guide.html
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/de/
-    for f in de/Master-DrakX-Guide.html/*.html; do
+    for f in publications/DrakX-Guide.de.html/*.html; do
     i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
     mv $f %buildroot/%_docdir/installer-help/de/$i
 done
@@ -610,7 +610,7 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/es/
 install -d -m 0755 $DESTDIR/mandriva/es/Starter/
-mv es/Master-Starter.html $DESTDIR/mandriva/es/Starter/Starter.html
+mv publications/Starter.es.html $DESTDIR/mandriva/es/Starter/Starter.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
@@ -629,18 +629,18 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/es/
 install -d -m 0755 $DESTDIR/mandriva/es/Drakxtools-Guide/
-mv es/Master-Drakxtools-Guide.html $DESTDIR/mandriva/es/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/Drakxtools-Guide.es.html $DESTDIR/mandriva/es/Drakxtools-Guide/Drakxtools-Guide.html
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/es/
-    for f in es/Master-DrakX-Guide.html/*.html; do
+    for f in publications/DrakX-Guide.es.html/*.html; do
     i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
     mv $f %buildroot/%_docdir/installer-help/es/$i
 done
 ln -s ../images  %buildroot/%_docdir/installer-help/es/images
 mv %buildroot/%_docdir/installer-help/en/* %buildroot/%_docdir/installer-help/
 rm -f %buildroot/%_docdir/installer-help/images
-mv en/Master-DrakX-Guide.html/images %buildroot/%_docdir/installer-help/
+mv publications/DrakX-Guide.en.html/images %buildroot/%_docdir/installer-help/
 rm -rf %buildroot/%_docdir/installer-help/en
 ln -s . %buildroot/%_docdir/installer-help/en
 sed -i -e 's!drakxid-!!g; s!drakx-!!g' %buildroot/%_docdir/installer-help/*.html %buildroot/%_docdir/installer-help/*/*.html
