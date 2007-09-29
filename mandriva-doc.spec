@@ -1,11 +1,13 @@
 %define distrib_name Mandriva Linux
 %define group Books/Computer books
 %define libdrakx %{_prefix}/lib/libDrakX
+%define _enable_debug_packages %{nil}
+%define debug_package          %{nil}
 
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2008.0
-Release:	%mkrel 0.6
+Release:	%mkrel 0.8
 License:	Open Publication License
 Group:		%group
 Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
