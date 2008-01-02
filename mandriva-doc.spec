@@ -15,6 +15,7 @@ Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
 Source0:	%name-%version.tar.bz2
 Source1:	%name.tar.bz2
 
+Buildroot:	%_tmppath/%name-%version-%release-root
 BuildArch:	noarch
 BuildRequires: 	make
 BuildRequires: 	perl
