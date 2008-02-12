@@ -277,7 +277,6 @@ Obsoletes: 	mandrake-doc-common
 Provides:	mandrake-doc-common
 
 %description common
-
 This package contains common icons and images for all %distrib_name
 specific documentation, plus the index file matching Help IDs to HTML
 help pages.
@@ -287,7 +286,6 @@ Summary:	DrakX Installer help in all available languages for %distrib_name
 Group:		%group
 
 %description installer-help
-
 This package contains the HTML files used as inline help during the
 installation procedure of %distrib_name
 
