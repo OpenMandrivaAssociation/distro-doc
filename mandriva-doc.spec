@@ -6,41 +6,35 @@
 
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
-Version:	2008.0
-Release:	%mkrel 0.20
+Version:	2008.1
+Release:	%mkrel 0.1
 License:	Open Publication License
 Group:		%group
 Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
 
-Source0:	%name-%version.tar.bz2
-Source1:	%name.tar.bz2
+Source0:	%name.tar.bz2
 
 Buildroot:	%_tmppath/%name-%version-%release-root
 BuildArch:	noarch
-BuildRequires: 	make
-BuildRequires: 	perl
-BuildRequires: 	libxslt-proc
-BuildRequires: 	ImageMagick
-BuildRequires: 	docbook-style-xsl
-BuildRequires:	docbook-dtd44-xml
-BuildRequires:	tetex-cmsuper
-BuildRequires: 	inkscape
+BuildRequires:  wget
 BuildRequires:  locales-en
+BuildRequires:  locales-lt
 BuildRequires:  locales-fr
 BuildRequires:  locales-pt
 BuildRequires:  locales-it
 BuildRequires:  locales-de
 BuildRequires:  locales-es
+BuildRequires:  locales-ru
 
 
-%define LANGS en fr pt_br it de es
+%define LANGS en lt fr pt_br it de es ru
 
 %description
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the menus.
 
 
-%package Starter-en
+%package Mastering-Manual-en
 Summary:        The %distrib_name manuals in English
 Group:          %group
 Requires:       locales-en
@@ -49,10 +43,10 @@ Obsoletes:      mandrake_doc-en
 Provides:       mandrake_doc-en = %version
 Obsoletes:      mandrake-doc-en
 Provides:       mandrake-doc-en = %version
-Obsoletes:      mandrake-doc-Starter-en
-Provides:       mandrake-doc-Starter-en = %version
+Obsoletes:      mandrake-doc-Mastering-Manual-en
+Provides:       mandrake-doc-Mastering-Manual-en = %version
 
-%description Starter-en
+%description Mastering-Manual-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
@@ -72,7 +66,7 @@ Provides:       mandrake-doc-Drakxtools-Guide-en = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%package DVD-Booklet-en
+%package Introducing-en
 Summary:        The %distrib_name manuals in English
 Group:          %group
 Requires:       locales-en
@@ -81,14 +75,30 @@ Obsoletes:      mandrake_doc-en
 Provides:       mandrake_doc-en = %version
 Obsoletes:      mandrake-doc-en
 Provides:       mandrake-doc-en = %version
-Obsoletes:      mandrake-doc-DVD-Booklet-en
-Provides:       mandrake-doc-DVD-Booklet-en = %version
+Obsoletes:      mandrake-doc-Introducing-en
+Provides:       mandrake-doc-Introducing-en = %version
 
-%description DVD-Booklet-en
+%description Introducing-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%package Starter-fr
+%package Introducing-lt
+Summary:        The %distrib_name manuals in Lituanian
+Group:          %group
+Requires:       locales-lt
+Requires:       mandriva-doc-common >= %version-%release
+Obsoletes:      mandrake_doc-lt
+Provides:       mandrake_doc-lt = %version
+Obsoletes:      mandrake-doc-lt
+Provides:       mandrake-doc-lt = %version
+Obsoletes:      mandrake-doc-Introducing-lt
+Provides:       mandrake-doc-Introducing-lt = %version
+
+%description Introducing-lt
+This package contains some useful documentation for %distrib_name systems.
+This documentation is directly accessible through the main menu.
+
+%package Mastering-Manual-fr
 Summary:        The %distrib_name manuals in French
 Group:          %group
 Requires:       locales-fr
@@ -97,10 +107,10 @@ Obsoletes:      mandrake_doc-fr
 Provides:       mandrake_doc-fr = %version
 Obsoletes:      mandrake-doc-fr
 Provides:       mandrake-doc-fr = %version
-Obsoletes:      mandrake-doc-Starter-fr
-Provides:       mandrake-doc-Starter-fr = %version
+Obsoletes:      mandrake-doc-Mastering-Manual-fr
+Provides:       mandrake-doc-Mastering-Manual-fr = %version
 
-%description Starter-fr
+%description Mastering-Manual-fr
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
@@ -120,7 +130,7 @@ Provides:       mandrake-doc-Drakxtools-Guide-fr = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%package DVD-Booklet-fr
+%package Introducing-fr
 Summary:        The %distrib_name manuals in French
 Group:          %group
 Requires:       locales-fr
@@ -129,10 +139,10 @@ Obsoletes:      mandrake_doc-fr
 Provides:       mandrake_doc-fr = %version
 Obsoletes:      mandrake-doc-fr
 Provides:       mandrake-doc-fr = %version
-Obsoletes:      mandrake-doc-DVD-Booklet-fr
-Provides:       mandrake-doc-DVD-Booklet-fr = %version
+Obsoletes:      mandrake-doc-Introducing-fr
+Provides:       mandrake-doc-Introducing-fr = %version
 
-%description DVD-Booklet-fr
+%description Introducing-fr
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
@@ -152,7 +162,7 @@ Provides:       mandrake-doc-Drakxtools-Guide-pt_br = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%package DVD-Booklet-pt_br
+%package Introducing-pt_br
 Summary:        The %distrib_name manuals in Brazilian Portuguese
 Group:          %group
 Requires:       locales-pt
@@ -161,26 +171,10 @@ Obsoletes:      mandrake_doc-pt_br
 Provides:       mandrake_doc-pt_br = %version
 Obsoletes:      mandrake-doc-pt_br
 Provides:       mandrake-doc-pt_br = %version
-Obsoletes:      mandrake-doc-DVD-Booklet-pt_br
-Provides:       mandrake-doc-DVD-Booklet-pt_br = %version
+Obsoletes:      mandrake-doc-Introducing-pt_br
+Provides:       mandrake-doc-Introducing-pt_br = %version
 
-%description DVD-Booklet-pt_br
-This package contains some useful documentation for %distrib_name systems.
-This documentation is directly accessible through the main menu.
-
-%package Starter-it
-Summary:        The %distrib_name manuals in Italian
-Group:          %group
-Requires:       locales-it
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-it
-Provides:       mandrake_doc-it = %version
-Obsoletes:      mandrake-doc-it
-Provides:       mandrake-doc-it = %version
-Obsoletes:      mandrake-doc-Starter-it
-Provides:       mandrake-doc-Starter-it = %version
-
-%description Starter-it
+%description Introducing-pt_br
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
@@ -200,22 +194,6 @@ Provides:       mandrake-doc-Drakxtools-Guide-it = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%package Starter-de
-Summary:        The %distrib_name manuals in German
-Group:          %group
-Requires:       locales-de
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-de
-Provides:       mandrake_doc-de = %version
-Obsoletes:      mandrake-doc-de
-Provides:       mandrake-doc-de = %version
-Obsoletes:      mandrake-doc-Starter-de
-Provides:       mandrake-doc-Starter-de = %version
-
-%description Starter-de
-This package contains some useful documentation for %distrib_name systems.
-This documentation is directly accessible through the main menu.
-
 %package Drakxtools-Guide-de
 Summary:        The %distrib_name manuals in German
 Group:          %group
@@ -229,22 +207,6 @@ Obsoletes:      mandrake-doc-Drakxtools-Guide-de
 Provides:       mandrake-doc-Drakxtools-Guide-de = %version
 
 %description Drakxtools-Guide-de
-This package contains some useful documentation for %distrib_name systems.
-This documentation is directly accessible through the main menu.
-
-%package Starter-es
-Summary:        The %distrib_name manuals in Spanish
-Group:          %group
-Requires:       locales-es
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-es
-Provides:       mandrake_doc-es = %version
-Obsoletes:      mandrake-doc-es
-Provides:       mandrake-doc-es = %version
-Obsoletes:      mandrake-doc-Starter-es
-Provides:       mandrake-doc-Starter-es = %version
-
-%description Starter-es
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
@@ -264,6 +226,22 @@ Provides:       mandrake-doc-Drakxtools-Guide-es = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
+%package Mastering-Manual-ru
+Summary:        The %distrib_name manuals in Russian
+Group:          %group
+Requires:       locales-ru
+Requires:       mandriva-doc-common >= %version-%release
+Obsoletes:      mandrake_doc-ru
+Provides:       mandrake_doc-ru = %version
+Obsoletes:      mandrake-doc-ru
+Provides:       mandrake-doc-ru = %version
+Obsoletes:      mandrake-doc-Mastering-Manual-ru
+Provides:       mandrake-doc-Mastering-Manual-ru = %version
+
+%description Mastering-Manual-ru
+This package contains some useful documentation for %distrib_name systems.
+This documentation is directly accessible through the main menu.
+
 
 
 
@@ -277,6 +255,7 @@ Obsoletes: 	mandrake-doc-common
 Provides:	mandrake-doc-common
 
 %description common
+
 This package contains common icons and images for all %distrib_name
 specific documentation, plus the index file matching Help IDs to HTML
 help pages.
@@ -286,36 +265,35 @@ Summary:	DrakX Installer help in all available languages for %distrib_name
 Group:		%group
 
 %description installer-help
+
 This package contains the HTML files used as inline help during the
 installation procedure of %distrib_name
 
 
 %prep
 
-%setup -q -a 1
+%setup -c %name-%version
 
-%build
 
-make -C publications Starter.en.html
-make -C publications DrakX-Guide.en.html
-make -C publications Drakxtools-Guide.en.html
-make -C publications DVD-Booklet.en.html
-make -C publications Starter.fr.html
-make -C publications DrakX-Guide.fr.html
-make -C publications Drakxtools-Guide.fr.html
-make -C publications DVD-Booklet.fr.html
-make -C publications DrakX-Guide.pt_br.html
-make -C publications Drakxtools-Guide.pt_br.html
-make -C publications DVD-Booklet.pt_br.html
-make -C publications Starter.it.html
-make -C publications DrakX-Guide.it.html
-make -C publications Drakxtools-Guide.it.html
-make -C publications Starter.de.html
-make -C publications DrakX-Guide.de.html
-make -C publications Drakxtools-Guide.de.html
-make -C publications Starter.es.html
-make -C publications DrakX-Guide.es.html
-make -C publications Drakxtools-Guide.es.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/Mastering-Manual.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/DrakX-Help.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/Drakxtools-Guide.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/Introducing.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/lt/Introducing.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/Mastering-Manual.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/DrakX-Help.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/Drakxtools-Guide.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/Introducing.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/pt_br/DrakX-Help.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/pt_br/Drakxtools-Guide.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/pt_br/Introducing.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/it/DrakX-Help.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/it/Drakxtools-Guide.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/de/DrakX-Help.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/de/Drakxtools-Guide.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/es/DrakX-Help.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/es/Drakxtools-Guide.html
+wget --mirror -nH http://neodoc.mandrivalinux.com/publications/ru/Mastering-Manual.html
 
 
 %install
@@ -332,11 +310,11 @@ install -d -m 0755 $DESTDIR/mandriva/images/
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Starter-en.desktop << EOF
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-en.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Starter Guide in English
 Comment=The %distrib_name manuals in English
-Exec=%{_bindir}/www-browser %_docdir/mandriva/en/Starter/index.html
+Exec=%{_bindir}/www-browser %_docdir/mandriva/en/Mastering-Manual/index.html
 Icon=documentation_section
 Terminal=false
 Type=Application
@@ -346,9 +324,16 @@ EOF
 
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/en/
-install -d -m 0755 $DESTDIR/mandriva/en/Starter/
-mv publications/Starter.en.html $DESTDIR/mandriva/en/Starter/Starter.html
+install -d -m 0755 $DESTDIR/mandriva/en/Mastering-Manual/
+mv publications/en/Mastering-Manual.html $DESTDIR/mandriva/en/Mastering-Manual/Mastering-Manual.html
 
+#install the DrakX Inline HTML Help
+install -d -m 0755 $DESTDIR/installer-help/en/
+for f in publications/en/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/en/$i
+done
+ln -s ../images  %buildroot/%_docdir/installer-help/en/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-en.desktop << EOF
@@ -366,15 +351,15 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/en/
 install -d -m 0755 $DESTDIR/mandriva/en/Drakxtools-Guide/
-mv publications/Drakxtools-Guide.en.html $DESTDIR/mandriva/en/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/en/Drakxtools-Guide.html $DESTDIR/mandriva/en/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-DVD-Booklet-en.desktop << EOF
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-en.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in English
 Comment=The %distrib_name manuals in English
-Exec=%{_bindir}/www-browser %_docdir/mandriva/en/DVD-Booklet/index.html
+Exec=%{_bindir}/www-browser %_docdir/mandriva/en/Introducing/index.html
 Icon=documentation_section
 Terminal=false
 Type=Application
@@ -384,23 +369,35 @@ EOF
 
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/en/
-install -d -m 0755 $DESTDIR/mandriva/en/DVD-Booklet/
-mv publications/DVD-Booklet.en.html $DESTDIR/mandriva/en/DVD-Booklet/DVD-Booklet.html
+install -d -m 0755 $DESTDIR/mandriva/en/Introducing/
+mv publications/en/Introducing.html $DESTDIR/mandriva/en/Introducing/Introducing.html
 
-#install the DrakX Inline HTML Help
-install -d -m 0755 $DESTDIR/installer-help/en/
-    for f in publications/DrakX-Guide.en.html/*.html; do
-    i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
-    mv $f %buildroot/%_docdir/installer-help/en/$i
-done
-ln -s ../images  %buildroot/%_docdir/installer-help/en/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Starter-fr.desktop << EOF
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-lt.desktop << EOF
+[Desktop Entry]
+Name=%distrib_name Quick Startup Guide in Lituanian
+Comment=The %distrib_name manuals in Lituanian
+Exec=%{_bindir}/www-browser %_docdir/mandriva/lt/Introducing/index.html
+Icon=documentation_section
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Documentation;
+EOF
+
+# install manuals
+install -d -m 0755 $DESTDIR/mandriva/lt/
+install -d -m 0755 $DESTDIR/mandriva/lt/Introducing/
+mv publications/lt/Introducing.html $DESTDIR/mandriva/lt/Introducing/Introducing.html
+
+# build menu entry
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-fr.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Starter Guide in French
 Comment=The %distrib_name manuals in French
-Exec=%{_bindir}/www-browser %_docdir/mandriva/fr/Starter/index.html
+Exec=%{_bindir}/www-browser %_docdir/mandriva/fr/Mastering-Manual/index.html
 Icon=documentation_section
 Terminal=false
 Type=Application
@@ -410,9 +407,16 @@ EOF
 
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/fr/
-install -d -m 0755 $DESTDIR/mandriva/fr/Starter/
-mv publications/Starter.fr.html $DESTDIR/mandriva/fr/Starter/Starter.html
+install -d -m 0755 $DESTDIR/mandriva/fr/Mastering-Manual/
+mv publications/fr/Mastering-Manual.html $DESTDIR/mandriva/fr/Mastering-Manual/Mastering-Manual.html
 
+#install the DrakX Inline HTML Help
+install -d -m 0755 $DESTDIR/installer-help/fr/
+for f in publications/fr/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/fr/$i
+done
+ln -s ../images  %buildroot/%_docdir/installer-help/fr/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-fr.desktop << EOF
@@ -430,15 +434,15 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/fr/
 install -d -m 0755 $DESTDIR/mandriva/fr/Drakxtools-Guide/
-mv publications/Drakxtools-Guide.fr.html $DESTDIR/mandriva/fr/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/fr/Drakxtools-Guide.html $DESTDIR/mandriva/fr/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-DVD-Booklet-fr.desktop << EOF
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-fr.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in French
 Comment=The %distrib_name manuals in French
-Exec=%{_bindir}/www-browser %_docdir/mandriva/fr/DVD-Booklet/index.html
+Exec=%{_bindir}/www-browser %_docdir/mandriva/fr/Introducing/index.html
 Icon=documentation_section
 Terminal=false
 Type=Application
@@ -448,16 +452,16 @@ EOF
 
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/fr/
-install -d -m 0755 $DESTDIR/mandriva/fr/DVD-Booklet/
-mv publications/DVD-Booklet.fr.html $DESTDIR/mandriva/fr/DVD-Booklet/DVD-Booklet.html
+install -d -m 0755 $DESTDIR/mandriva/fr/Introducing/
+mv publications/fr/Introducing.html $DESTDIR/mandriva/fr/Introducing/Introducing.html
 
 #install the DrakX Inline HTML Help
-install -d -m 0755 $DESTDIR/installer-help/fr/
-    for f in publications/DrakX-Guide.fr.html/*.html; do
-    i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
-    mv $f %buildroot/%_docdir/installer-help/fr/$i
+install -d -m 0755 $DESTDIR/installer-help/pt_br/
+for f in publications/pt_br/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/pt_br/$i
 done
-ln -s ../images  %buildroot/%_docdir/installer-help/fr/images
+ln -s ../images  %buildroot/%_docdir/installer-help/pt_br/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-pt_br.desktop << EOF
@@ -475,15 +479,15 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/pt_br/
 install -d -m 0755 $DESTDIR/mandriva/pt_br/Drakxtools-Guide/
-mv publications/Drakxtools-Guide.pt_br.html $DESTDIR/mandriva/pt_br/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/pt_br/Drakxtools-Guide.html $DESTDIR/mandriva/pt_br/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-DVD-Booklet-pt_br.desktop << EOF
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-pt_br.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in Brazilian Portuguese
 Comment=The %distrib_name manuals in Brazilian Portuguese
-Exec=%{_bindir}/www-browser %_docdir/mandriva/pt_br/DVD-Booklet/index.html
+Exec=%{_bindir}/www-browser %_docdir/mandriva/pt_br/Introducing/index.html
 Icon=documentation_section
 Terminal=false
 Type=Application
@@ -493,35 +497,16 @@ EOF
 
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/pt_br/
-install -d -m 0755 $DESTDIR/mandriva/pt_br/DVD-Booklet/
-mv publications/DVD-Booklet.pt_br.html $DESTDIR/mandriva/pt_br/DVD-Booklet/DVD-Booklet.html
+install -d -m 0755 $DESTDIR/mandriva/pt_br/Introducing/
+mv publications/pt_br/Introducing.html $DESTDIR/mandriva/pt_br/Introducing/Introducing.html
 
 #install the DrakX Inline HTML Help
-install -d -m 0755 $DESTDIR/installer-help/pt_br/
-    for f in publications/DrakX-Guide.pt_br.html/*.html; do
-    i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
-    mv $f %buildroot/%_docdir/installer-help/pt_br/$i
+install -d -m 0755 $DESTDIR/installer-help/it/
+for f in publications/it/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/it/$i
 done
-ln -s ../images  %buildroot/%_docdir/installer-help/pt_br/images
-# build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Starter-it.desktop << EOF
-[Desktop Entry]
-Name=%distrib_name Starter Guide in Italian
-Comment=The %distrib_name manuals in Italian
-Exec=%{_bindir}/www-browser %_docdir/mandriva/it/Starter/index.html
-Icon=documentation_section
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=Documentation;
-EOF
-
-# install manuals
-install -d -m 0755 $DESTDIR/mandriva/it/
-install -d -m 0755 $DESTDIR/mandriva/it/Starter/
-mv publications/Starter.it.html $DESTDIR/mandriva/it/Starter/Starter.html
-
+ln -s ../images  %buildroot/%_docdir/installer-help/it/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-it.desktop << EOF
@@ -539,34 +524,15 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/it/
 install -d -m 0755 $DESTDIR/mandriva/it/Drakxtools-Guide/
-mv publications/Drakxtools-Guide.it.html $DESTDIR/mandriva/it/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/it/Drakxtools-Guide.html $DESTDIR/mandriva/it/Drakxtools-Guide/Drakxtools-Guide.html
 
 #install the DrakX Inline HTML Help
-install -d -m 0755 $DESTDIR/installer-help/it/
-    for f in publications/DrakX-Guide.it.html/*.html; do
-    i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
-    mv $f %buildroot/%_docdir/installer-help/it/$i
+install -d -m 0755 $DESTDIR/installer-help/de/
+for f in publications/de/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/de/$i
 done
-ln -s ../images  %buildroot/%_docdir/installer-help/it/images
-# build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Starter-de.desktop << EOF
-[Desktop Entry]
-Name=%distrib_name Starter Guide in German
-Comment=The %distrib_name manuals in German
-Exec=%{_bindir}/www-browser %_docdir/mandriva/de/Starter/index.html
-Icon=documentation_section
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=Documentation;
-EOF
-
-# install manuals
-install -d -m 0755 $DESTDIR/mandriva/de/
-install -d -m 0755 $DESTDIR/mandriva/de/Starter/
-mv publications/Starter.de.html $DESTDIR/mandriva/de/Starter/Starter.html
-
+ln -s ../images  %buildroot/%_docdir/installer-help/de/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-de.desktop << EOF
@@ -584,34 +550,15 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/de/
 install -d -m 0755 $DESTDIR/mandriva/de/Drakxtools-Guide/
-mv publications/Drakxtools-Guide.de.html $DESTDIR/mandriva/de/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/de/Drakxtools-Guide.html $DESTDIR/mandriva/de/Drakxtools-Guide/Drakxtools-Guide.html
 
 #install the DrakX Inline HTML Help
-install -d -m 0755 $DESTDIR/installer-help/de/
-    for f in publications/DrakX-Guide.de.html/*.html; do
-    i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
-    mv $f %buildroot/%_docdir/installer-help/de/$i
+install -d -m 0755 $DESTDIR/installer-help/es/
+for f in publications/es/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/es/$i
 done
-ln -s ../images  %buildroot/%_docdir/installer-help/de/images
-# build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Starter-es.desktop << EOF
-[Desktop Entry]
-Name=%distrib_name Starter Guide in Spanish
-Comment=The %distrib_name manuals in Spanish
-Exec=%{_bindir}/www-browser %_docdir/mandriva/es/Starter/index.html
-Icon=documentation_section
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=Documentation;
-EOF
-
-# install manuals
-install -d -m 0755 $DESTDIR/mandriva/es/
-install -d -m 0755 $DESTDIR/mandriva/es/Starter/
-mv publications/Starter.es.html $DESTDIR/mandriva/es/Starter/Starter.html
-
+ln -s ../images  %buildroot/%_docdir/installer-help/es/images
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-es.desktop << EOF
@@ -629,25 +576,37 @@ EOF
 # install manuals
 install -d -m 0755 $DESTDIR/mandriva/es/
 install -d -m 0755 $DESTDIR/mandriva/es/Drakxtools-Guide/
-mv publications/Drakxtools-Guide.es.html $DESTDIR/mandriva/es/Drakxtools-Guide/Drakxtools-Guide.html
+mv publications/es/Drakxtools-Guide.html $DESTDIR/mandriva/es/Drakxtools-Guide/Drakxtools-Guide.html
 
-#install the DrakX Inline HTML Help
-install -d -m 0755 $DESTDIR/installer-help/es/
-    for f in publications/DrakX-Guide.es.html/*.html; do
-    i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
-    mv $f %buildroot/%_docdir/installer-help/es/$i
-done
-ln -s ../images  %buildroot/%_docdir/installer-help/es/images
+# build menu entry
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-ru.desktop << EOF
+[Desktop Entry]
+Name=%distrib_name Starter Guide in Russian
+Comment=The %distrib_name manuals in Russian
+Exec=%{_bindir}/www-browser %_docdir/mandriva/ru/Mastering-Manual/index.html
+Icon=documentation_section
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Documentation;
+EOF
+
+# install manuals
+install -d -m 0755 $DESTDIR/mandriva/ru/
+install -d -m 0755 $DESTDIR/mandriva/ru/Mastering-Manual/
+mv publications/ru/Mastering-Manual.html $DESTDIR/mandriva/ru/Mastering-Manual/Mastering-Manual.html
+
 mv %buildroot/%_docdir/installer-help/en/* %buildroot/%_docdir/installer-help/
 rm -f %buildroot/%_docdir/installer-help/images
-mv publications/DrakX-Guide.en.html/images %buildroot/%_docdir/installer-help/
+mv publications/en/DrakX-Help.html/images %buildroot/%_docdir/installer-help/
 rm -rf %buildroot/%_docdir/installer-help/en
 ln -s . %buildroot/%_docdir/installer-help/en
 sed -i -e 's!drakxid-!!g; s!drakx-!!g' %buildroot/%_docdir/installer-help/*.html %buildroot/%_docdir/installer-help/*/*.html
 
 
 # build HTML index file
-cat > $DESTDIR/mandriva/en/Starter/index.html <<EOF
+cat > $DESTDIR/mandriva/en/Mastering-Manual/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -660,13 +619,13 @@ cat > $DESTDIR/mandriva/en/Starter/index.html <<EOF
 <table style="width: 80%;" >
   <tbody>
     <tr>
-    <a href="Starter.html/index.html">
+    <a href="Mastering-Manual.html/index.html">
       <img src="../../images/manuel-face.png" align="center" border="0">
        HTML</a>
     </tr>
 <!--
     <tr>
-      <a href="Starter.pdf">
+      <a href="Mastering-Manual.pdf">
       <img src="../../images/manuel-face.png" align="center" border="0"> 
       PDF</a>
       </tr>
@@ -709,7 +668,7 @@ cat > $DESTDIR/mandriva/en/Drakxtools-Guide/index.html <<EOF
 </html>
 EOF
 # build HTML index file
-cat > $DESTDIR/mandriva/en/DVD-Booklet/index.html <<EOF
+cat > $DESTDIR/mandriva/en/Introducing/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -722,13 +681,13 @@ cat > $DESTDIR/mandriva/en/DVD-Booklet/index.html <<EOF
 <table style="width: 80%;" >
   <tbody>
     <tr>
-    <a href="DVD-Booklet.html/index.html">
+    <a href="Introducing.html/index.html">
       <img src="../../images/manuel-face.png" align="center" border="0">
        HTML</a>
     </tr>
 <!--
     <tr>
-      <a href="DVD-Booklet.pdf">
+      <a href="Introducing.pdf">
       <img src="../../images/manuel-face.png" align="center" border="0"> 
       PDF</a>
       </tr>
@@ -740,7 +699,7 @@ cat > $DESTDIR/mandriva/en/DVD-Booklet/index.html <<EOF
 </html>
 EOF
 # build HTML index file
-cat > $DESTDIR/mandriva/fr/Starter/index.html <<EOF
+cat > $DESTDIR/mandriva/lt/Introducing/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -753,13 +712,44 @@ cat > $DESTDIR/mandriva/fr/Starter/index.html <<EOF
 <table style="width: 80%;" >
   <tbody>
     <tr>
-    <a href="Starter.html/index.html">
+    <a href="Introducing.html/index.html">
       <img src="../../images/manuel-face.png" align="center" border="0">
        HTML</a>
     </tr>
 <!--
     <tr>
-      <a href="Starter.pdf">
+      <a href="Introducing.pdf">
+      <img src="../../images/manuel-face.png" align="center" border="0"> 
+      PDF</a>
+      </tr>
+-->
+    </tbody>
+  </table>
+</center>
+</body>
+</html>
+EOF
+# build HTML index file
+cat > $DESTDIR/mandriva/fr/Mastering-Manual/index.html <<EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<center>
+<img src="../../images/MDKlinux.png" border="0">
+<br/><br/>
+<table style="width: 80%;" >
+  <tbody>
+    <tr>
+    <a href="Mastering-Manual.html/index.html">
+      <img src="../../images/manuel-face.png" align="center" border="0">
+       HTML</a>
+    </tr>
+<!--
+    <tr>
+      <a href="Mastering-Manual.pdf">
       <img src="../../images/manuel-face.png" align="center" border="0"> 
       PDF</a>
       </tr>
@@ -802,7 +792,7 @@ cat > $DESTDIR/mandriva/fr/Drakxtools-Guide/index.html <<EOF
 </html>
 EOF
 # build HTML index file
-cat > $DESTDIR/mandriva/fr/DVD-Booklet/index.html <<EOF
+cat > $DESTDIR/mandriva/fr/Introducing/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -815,13 +805,13 @@ cat > $DESTDIR/mandriva/fr/DVD-Booklet/index.html <<EOF
 <table style="width: 80%;" >
   <tbody>
     <tr>
-    <a href="DVD-Booklet.html/index.html">
+    <a href="Introducing.html/index.html">
       <img src="../../images/manuel-face.png" align="center" border="0">
        HTML</a>
     </tr>
 <!--
     <tr>
-      <a href="DVD-Booklet.pdf">
+      <a href="Introducing.pdf">
       <img src="../../images/manuel-face.png" align="center" border="0"> 
       PDF</a>
       </tr>
@@ -864,7 +854,7 @@ cat > $DESTDIR/mandriva/pt_br/Drakxtools-Guide/index.html <<EOF
 </html>
 EOF
 # build HTML index file
-cat > $DESTDIR/mandriva/pt_br/DVD-Booklet/index.html <<EOF
+cat > $DESTDIR/mandriva/pt_br/Introducing/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -877,44 +867,13 @@ cat > $DESTDIR/mandriva/pt_br/DVD-Booklet/index.html <<EOF
 <table style="width: 80%;" >
   <tbody>
     <tr>
-    <a href="DVD-Booklet.html/index.html">
+    <a href="Introducing.html/index.html">
       <img src="../../images/manuel-face.png" align="center" border="0">
        HTML</a>
     </tr>
 <!--
     <tr>
-      <a href="DVD-Booklet.pdf">
-      <img src="../../images/manuel-face.png" align="center" border="0"> 
-      PDF</a>
-      </tr>
--->
-    </tbody>
-  </table>
-</center>
-</body>
-</html>
-EOF
-# build HTML index file
-cat > $DESTDIR/mandriva/it/Starter/index.html <<EOF
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-<body>
-<center>
-<img src="../../images/MDKlinux.png" border="0">
-<br/><br/>
-<table style="width: 80%;" >
-  <tbody>
-    <tr>
-    <a href="Starter.html/index.html">
-      <img src="../../images/manuel-face.png" align="center" border="0">
-       HTML</a>
-    </tr>
-<!--
-    <tr>
-      <a href="Starter.pdf">
+      <a href="Introducing.pdf">
       <img src="../../images/manuel-face.png" align="center" border="0"> 
       PDF</a>
       </tr>
@@ -957,37 +916,6 @@ cat > $DESTDIR/mandriva/it/Drakxtools-Guide/index.html <<EOF
 </html>
 EOF
 # build HTML index file
-cat > $DESTDIR/mandriva/de/Starter/index.html <<EOF
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-<body>
-<center>
-<img src="../../images/MDKlinux.png" border="0">
-<br/><br/>
-<table style="width: 80%;" >
-  <tbody>
-    <tr>
-    <a href="Starter.html/index.html">
-      <img src="../../images/manuel-face.png" align="center" border="0">
-       HTML</a>
-    </tr>
-<!--
-    <tr>
-      <a href="Starter.pdf">
-      <img src="../../images/manuel-face.png" align="center" border="0"> 
-      PDF</a>
-      </tr>
--->
-    </tbody>
-  </table>
-</center>
-</body>
-</html>
-EOF
-# build HTML index file
 cat > $DESTDIR/mandriva/de/Drakxtools-Guide/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -1008,37 +936,6 @@ cat > $DESTDIR/mandriva/de/Drakxtools-Guide/index.html <<EOF
 <!--
     <tr>
       <a href="Drakxtools-Guide.pdf">
-      <img src="../../images/manuel-face.png" align="center" border="0"> 
-      PDF</a>
-      </tr>
--->
-    </tbody>
-  </table>
-</center>
-</body>
-</html>
-EOF
-# build HTML index file
-cat > $DESTDIR/mandriva/es/Starter/index.html <<EOF
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-</head>
-<body>
-<center>
-<img src="../../images/MDKlinux.png" border="0">
-<br/><br/>
-<table style="width: 80%;" >
-  <tbody>
-    <tr>
-    <a href="Starter.html/index.html">
-      <img src="../../images/manuel-face.png" align="center" border="0">
-       HTML</a>
-    </tr>
-<!--
-    <tr>
-      <a href="Starter.pdf">
       <img src="../../images/manuel-face.png" align="center" border="0"> 
       PDF</a>
       </tr>
@@ -1080,6 +977,37 @@ cat > $DESTDIR/mandriva/es/Drakxtools-Guide/index.html <<EOF
 </body>
 </html>
 EOF
+# build HTML index file
+cat > $DESTDIR/mandriva/ru/Mastering-Manual/index.html <<EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body>
+<center>
+<img src="../../images/MDKlinux.png" border="0">
+<br/><br/>
+<table style="width: 80%;" >
+  <tbody>
+    <tr>
+    <a href="Mastering-Manual.html/index.html">
+      <img src="../../images/manuel-face.png" align="center" border="0">
+       HTML</a>
+    </tr>
+<!--
+    <tr>
+      <a href="Mastering-Manual.pdf">
+      <img src="../../images/manuel-face.png" align="center" border="0"> 
+      PDF</a>
+      </tr>
+-->
+    </tbody>
+  </table>
+</center>
+</body>
+</html>
+EOF
 
 
 # install ctxhelp.pm which tells drakhelp which HTML help page
@@ -1097,9 +1025,9 @@ done
 rm -fr %buildroot
 
 
-%post Starter-en
+%post Mastering-Manual-en
 %{update_menus}
-%postun Starter-en
+%postun Mastering-Manual-en
 %{clean_menus}
 
 %post Drakxtools-Guide-en
@@ -1107,14 +1035,19 @@ rm -fr %buildroot
 %postun Drakxtools-Guide-en
 %{clean_menus}
 
-%post DVD-Booklet-en
+%post Introducing-en
 %{update_menus}
-%postun DVD-Booklet-en
+%postun Introducing-en
 %{clean_menus}
 
-%post Starter-fr
+%post Introducing-lt
 %{update_menus}
-%postun Starter-fr
+%postun Introducing-lt
+%{clean_menus}
+
+%post Mastering-Manual-fr
+%{update_menus}
+%postun Mastering-Manual-fr
 %{clean_menus}
 
 %post Drakxtools-Guide-fr
@@ -1122,9 +1055,9 @@ rm -fr %buildroot
 %postun Drakxtools-Guide-fr
 %{clean_menus}
 
-%post DVD-Booklet-fr
+%post Introducing-fr
 %{update_menus}
-%postun DVD-Booklet-fr
+%postun Introducing-fr
 %{clean_menus}
 
 %post Drakxtools-Guide-pt_br
@@ -1132,14 +1065,9 @@ rm -fr %buildroot
 %postun Drakxtools-Guide-pt_br
 %{clean_menus}
 
-%post DVD-Booklet-pt_br
+%post Introducing-pt_br
 %{update_menus}
-%postun DVD-Booklet-pt_br
-%{clean_menus}
-
-%post Starter-it
-%{update_menus}
-%postun Starter-it
+%postun Introducing-pt_br
 %{clean_menus}
 
 %post Drakxtools-Guide-it
@@ -1147,24 +1075,19 @@ rm -fr %buildroot
 %postun Drakxtools-Guide-it
 %{clean_menus}
 
-%post Starter-de
-%{update_menus}
-%postun Starter-de
-%{clean_menus}
-
 %post Drakxtools-Guide-de
 %{update_menus}
 %postun Drakxtools-Guide-de
 %{clean_menus}
 
-%post Starter-es
-%{update_menus}
-%postun Starter-es
-%{clean_menus}
-
 %post Drakxtools-Guide-es
 %{update_menus}
 %postun Drakxtools-Guide-es
+%{clean_menus}
+
+%post Mastering-Manual-ru
+%{update_menus}
+%postun Mastering-Manual-ru
 %{clean_menus}
 
 
@@ -1185,11 +1108,11 @@ rm -fr %buildroot
 %docdir %_docdir/installer-help/
 %doc %_docdir/installer-help/*
 
-%files Starter-en
+%files Mastering-Manual-en
 %defattr(-,root,root)
-%{_datadir}/applications/%name-Starter-en.desktop
-%dir %_docdir/mandriva/en/Starter
-%doc %_docdir/mandriva/en/Starter/*
+%{_datadir}/applications/%name-Mastering-Manual-en.desktop
+%dir %_docdir/mandriva/en/Mastering-Manual
+%doc %_docdir/mandriva/en/Mastering-Manual/*
 
 %files Drakxtools-Guide-en
 %defattr(-,root,root)
@@ -1197,17 +1120,23 @@ rm -fr %buildroot
 %dir %_docdir/mandriva/en/Drakxtools-Guide
 %doc %_docdir/mandriva/en/Drakxtools-Guide/*
 
-%files DVD-Booklet-en
+%files Introducing-en
 %defattr(-,root,root)
-%{_datadir}/applications/%name-DVD-Booklet-en.desktop
-%dir %_docdir/mandriva/en/DVD-Booklet
-%doc %_docdir/mandriva/en/DVD-Booklet/*
+%{_datadir}/applications/%name-Introducing-en.desktop
+%dir %_docdir/mandriva/en/Introducing
+%doc %_docdir/mandriva/en/Introducing/*
 
-%files Starter-fr
+%files Introducing-lt
 %defattr(-,root,root)
-%{_datadir}/applications/%name-Starter-fr.desktop
-%dir %_docdir/mandriva/fr/Starter
-%doc %_docdir/mandriva/fr/Starter/*
+%{_datadir}/applications/%name-Introducing-lt.desktop
+%dir %_docdir/mandriva/lt/Introducing
+%doc %_docdir/mandriva/lt/Introducing/*
+
+%files Mastering-Manual-fr
+%defattr(-,root,root)
+%{_datadir}/applications/%name-Mastering-Manual-fr.desktop
+%dir %_docdir/mandriva/fr/Mastering-Manual
+%doc %_docdir/mandriva/fr/Mastering-Manual/*
 
 %files Drakxtools-Guide-fr
 %defattr(-,root,root)
@@ -1215,11 +1144,11 @@ rm -fr %buildroot
 %dir %_docdir/mandriva/fr/Drakxtools-Guide
 %doc %_docdir/mandriva/fr/Drakxtools-Guide/*
 
-%files DVD-Booklet-fr
+%files Introducing-fr
 %defattr(-,root,root)
-%{_datadir}/applications/%name-DVD-Booklet-fr.desktop
-%dir %_docdir/mandriva/fr/DVD-Booklet
-%doc %_docdir/mandriva/fr/DVD-Booklet/*
+%{_datadir}/applications/%name-Introducing-fr.desktop
+%dir %_docdir/mandriva/fr/Introducing
+%doc %_docdir/mandriva/fr/Introducing/*
 
 %files Drakxtools-Guide-pt_br
 %defattr(-,root,root)
@@ -1227,17 +1156,11 @@ rm -fr %buildroot
 %dir %_docdir/mandriva/pt_br/Drakxtools-Guide
 %doc %_docdir/mandriva/pt_br/Drakxtools-Guide/*
 
-%files DVD-Booklet-pt_br
+%files Introducing-pt_br
 %defattr(-,root,root)
-%{_datadir}/applications/%name-DVD-Booklet-pt_br.desktop
-%dir %_docdir/mandriva/pt_br/DVD-Booklet
-%doc %_docdir/mandriva/pt_br/DVD-Booklet/*
-
-%files Starter-it
-%defattr(-,root,root)
-%{_datadir}/applications/%name-Starter-it.desktop
-%dir %_docdir/mandriva/it/Starter
-%doc %_docdir/mandriva/it/Starter/*
+%{_datadir}/applications/%name-Introducing-pt_br.desktop
+%dir %_docdir/mandriva/pt_br/Introducing
+%doc %_docdir/mandriva/pt_br/Introducing/*
 
 %files Drakxtools-Guide-it
 %defattr(-,root,root)
@@ -1245,29 +1168,23 @@ rm -fr %buildroot
 %dir %_docdir/mandriva/it/Drakxtools-Guide
 %doc %_docdir/mandriva/it/Drakxtools-Guide/*
 
-%files Starter-de
-%defattr(-,root,root)
-%{_datadir}/applications/%name-Starter-de.desktop
-%dir %_docdir/mandriva/de/Starter
-%doc %_docdir/mandriva/de/Starter/*
-
 %files Drakxtools-Guide-de
 %defattr(-,root,root)
 %{_datadir}/applications/%name-Drakxtools-Guide-de.desktop
 %dir %_docdir/mandriva/de/Drakxtools-Guide
 %doc %_docdir/mandriva/de/Drakxtools-Guide/*
 
-%files Starter-es
-%defattr(-,root,root)
-%{_datadir}/applications/%name-Starter-es.desktop
-%dir %_docdir/mandriva/es/Starter
-%doc %_docdir/mandriva/es/Starter/*
-
 %files Drakxtools-Guide-es
 %defattr(-,root,root)
 %{_datadir}/applications/%name-Drakxtools-Guide-es.desktop
 %dir %_docdir/mandriva/es/Drakxtools-Guide
 %doc %_docdir/mandriva/es/Drakxtools-Guide/*
+
+%files Mastering-Manual-ru
+%defattr(-,root,root)
+%{_datadir}/applications/%name-Mastering-Manual-ru.desktop
+%dir %_docdir/mandriva/ru/Mastering-Manual
+%doc %_docdir/mandriva/ru/Mastering-Manual/*
 
 
 
