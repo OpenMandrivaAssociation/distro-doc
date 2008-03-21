@@ -13,6 +13,7 @@ Group:		%group
 Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
 
 Source0:	%name.tar.bz2
+Source1:	%name-%version.tar.bz2
 
 Buildroot:	%_tmppath/%name-%version-%release-root
 BuildArch:	noarch
@@ -272,28 +273,7 @@ installation procedure of %distrib_name
 
 %prep
 
-%setup -c %name-%version
-
-
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/Mastering-Manual.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/DrakX-Help.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/Drakxtools-Guide.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/en/Introducing.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/lt/Introducing.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/Mastering-Manual.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/DrakX-Help.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/Drakxtools-Guide.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/fr/Introducing.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/pt_br/DrakX-Help.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/pt_br/Drakxtools-Guide.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/pt_br/Introducing.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/it/DrakX-Help.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/it/Drakxtools-Guide.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/de/DrakX-Help.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/de/Drakxtools-Guide.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/es/DrakX-Help.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/es/Drakxtools-Guide.html
-wget --mirror -nH http://neodoc.mandrivalinux.com/publications/ru/Mastering-Manual.html
+%setup -c %name-%version -a 1
 
 
 %install
