@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2008.1
-Release:	%mkrel 0.1
+Release:	%mkrel 0.2
 License:	Open Publication License
 Group:		%group
 Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
@@ -273,7 +273,7 @@ installation procedure of %distrib_name
 
 %prep
 
-%setup -c %name-%version -a 1
+%setup -q -c %name-%version -a 1
 
 
 %install
