@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2008.1
-Release:	%mkrel 0.3
+Release:	%mkrel 0.4
 License:	Open Publication License
 Group:		%group
 Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
@@ -40,10 +40,10 @@ Summary:        The %distrib_name manuals in English
 Group:          %group
 Requires:       locales-en
 Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-en
-Provides:       mandrake_doc-en = %version
-Obsoletes:      mandrake-doc-en
-Provides:       mandrake-doc-en = %version
+Obsoletes:      mandrake_doc-drakxtools-en
+Provides:       mandriva-doc-Discovery-en = %version
+Obsoletes:      mandriva-doc-Discovery-en                                                                                                                                                            
+Provides:       mandriva-doc-Discovery-en = %version
 Obsoletes:      mandrake-doc-Mastering-Manual-en
 Provides:       mandrake-doc-Mastering-Manual-en = %version
 
@@ -104,10 +104,10 @@ Summary:        The %distrib_name manuals in French
 Group:          %group
 Requires:       locales-fr
 Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-fr
-Provides:       mandrake_doc-fr = %version
-Obsoletes:      mandrake-doc-fr
-Provides:       mandrake-doc-fr = %version
+Obsoletes:      mandrake_doc-drakxtools-fr
+Provides:       mandriva-doc-Discovery-fr = %version
+Obsoletes:      mandriva-doc-Discovery-fr                                                                                                                                                            
+Provides:       mandriva-doc-Discovery-fr = %version
 Obsoletes:      mandrake-doc-Mastering-Manual-fr
 Provides:       mandrake-doc-Mastering-Manual-fr = %version
 
@@ -232,10 +232,10 @@ Summary:        The %distrib_name manuals in Russian
 Group:          %group
 Requires:       locales-ru
 Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-ru
-Provides:       mandrake_doc-ru = %version
-Obsoletes:      mandrake-doc-ru
-Provides:       mandrake-doc-ru = %version
+Obsoletes:      mandrake_doc-drakxtools-ru
+Provides:       mandriva-doc-Discovery-ru = %version
+Obsoletes:      mandriva-doc-Discovery-ru                                                                                                                                                            
+Provides:       mandriva-doc-Discovery-ru = %version
 Obsoletes:      mandrake-doc-Mastering-Manual-ru
 Provides:       mandrake-doc-Mastering-Manual-ru = %version
 
