@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2008.1
-Release:	%mkrel 0.2
+Release:	%mkrel 0.3
 License:	Open Publication License
 Group:		%group
 Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
