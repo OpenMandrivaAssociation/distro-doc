@@ -1005,70 +1005,122 @@ done
 rm -fr %buildroot
 
 
+%if %mdkversion < 200900
 %post Mastering-Manual-en
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Mastering-Manual-en
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Drakxtools-Guide-en
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Drakxtools-Guide-en
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Introducing-en
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Introducing-en
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Introducing-lt
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Introducing-lt
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Mastering-Manual-fr
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Mastering-Manual-fr
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Drakxtools-Guide-fr
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Drakxtools-Guide-fr
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Introducing-fr
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Introducing-fr
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Drakxtools-Guide-pt_br
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Drakxtools-Guide-pt_br
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Introducing-pt_br
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Introducing-pt_br
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Drakxtools-Guide-it
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Drakxtools-Guide-it
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Drakxtools-Guide-de
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Drakxtools-Guide-de
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Drakxtools-Guide-es
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Drakxtools-Guide-es
 %{clean_menus}
+%endif
 
+%if %mdkversion < 200900
 %post Mastering-Manual-ru
 %{update_menus}
+%endif
+%if %mdkversion < 200900
 %postun Mastering-Manual-ru
 %{clean_menus}
+%endif
 
 
 
