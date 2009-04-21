@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2009.1
-Release:	%mkrel 1
+Release:	%mkrel 2.0
 
 License:	Open Publication License
 Group:		%group
