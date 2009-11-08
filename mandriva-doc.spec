@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2010.0
-Release:	%mkrel 3.0
+Release:	%mkrel 4.0
 
 License:	Open Publication License
 Group:		%group
