@@ -6,7 +6,7 @@
 
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
-Version:	2010.1
+Version:	2011.0
 Release:	%mkrel 1.0
 
 License:	Open Publication License
