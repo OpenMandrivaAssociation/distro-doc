@@ -6,7 +6,7 @@
 
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
-Version:	2011.0
+Version:	2010.1
 Release:	%mkrel 1.1
 
 License:	Open Publication License
@@ -25,13 +25,18 @@ BuildRequires:  locales-pt
 BuildRequires:  locales-it
 BuildRequires:  locales-de
 BuildRequires:  locales-es
+BuildRequires:  locales-ru
 
 
-%define LANGS en fr pt_br it de es
+%define LANGS en fr pt_br it de es ru
 
 %description
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the menus.
+
+%description -l ru
+Этот пакет содержит полезную документацию для %distrib_name.
+Эта документация доступна напрямую через пункты меню.
 
 
 %package Mastering-Manual-en
@@ -81,6 +86,70 @@ Provides:       mandrake-doc-Introducing-en = %version
 %description Introducing-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
+
+%package Mastering-Manual-ru
+Summary:        The %distrib_name manuals in English
+Summary(ru):	Руководство пользователя на русском
+Group:          %group
+Requires:       locales-ru
+Requires:       mandriva-doc-common >= %version-%release
+Obsoletes:      mandrake_doc-drakxtools-ru
+Provides:       mandriva-doc-Discovery-ru = %version
+Obsoletes:      mandriva-doc-Discovery-ru                                                                                                                                                            
+Provides:       mandriva-doc-Discovery-ru = %version
+Obsoletes:      mandrake-doc-Mastering-Manual-ru
+Provides:       mandrake-doc-Mastering-Manual-ru = %version
+
+%description Mastering-Manual-ru
+This package contains some useful documentation for %distrib_name systems.
+This documentation is directly accessible through the main menu.
+
+%description -l ru Mastering-Manual-ru
+Этот пакет содержит полезную документацию для %distrib_name.
+Эта документация доступна напрямую через пункты меню.
+
+
+%package Drakxtools-Guide-ru
+Summary:        The %distrib_name manuals in English
+Summary(ru):	Руководство пользователя на русском
+Group:          %group
+Requires:       locales-ru
+Requires:       mandriva-doc-common >= %version-%release
+Obsoletes:      mandrake_doc-drakxtools-ru
+Provides:       mandrake_doc-drakxtools-ru = %version
+Obsoletes:      mandrake-doc-drakxtools-ru
+Provides:       mandrake-doc-drakxtools-ru = %version
+Obsoletes:      mandrake-doc-Drakxtools-Guide-ru
+Provides:       mandrake-doc-Drakxtools-Guide-ru = %version
+
+%description Drakxtools-Guide-en
+This package contains some useful documentation for %distrib_name systems.
+This documentation is directly accessible through the main menu.
+
+%description -l ru Drakxtools-Guide-ru
+Этот пакет содержит полезную документацию для %distrib_name.
+Эта документация доступна напрямую через пункты меню.
+
+%package Introducing-ru
+Summary:        The %distrib_name manuals in English
+Summary(ru):	Руководство пользователя на русском
+Group:          %group
+Requires:       locales-ru
+Requires:       mandriva-doc-common >= %version-%release
+Obsoletes:      mandrake_doc-ru
+Provides:       mandrake_doc-ru = %version
+Obsoletes:      mandrake-doc-ru
+Provides:       mandrake-doc-ru = %version
+Obsoletes:      mandrake-doc-Introducing-ru
+Provides:       mandrake-doc-Introducing-ru = %version
+
+%description Introducing-en
+This package contains some useful documentation for %distrib_name systems.
+This documentation is directly accessible through the main menu.
+
+%description -l ru Introducing-ru
+Этот пакет содержит полезную документацию для %distrib_name.
+Эта документация доступна напрямую через пункты меню.
 
 %package Mastering-Manual-fr
 Summary:        The %distrib_name manuals in French
@@ -167,6 +236,7 @@ This documentation is directly accessible through the main menu.
 
 %package common
 Summary:	Common data for all %distrib_name specific documentation
+Summary(ru): Общие данные для всех документов %distrib_name
 Group:		%group
 Conflicts:	mandrake_doc < 9.2
 Obsoletes: 	mandrake_doc-common
@@ -180,14 +250,23 @@ This package contains common icons and images for all %distrib_name
 specific documentation, plus the index file matching Help IDs to HTML
 help pages.
 
+%description -l ru common
+Этоьт пакет содержит иконки и картинки для всех документов %distrib_name
+плюс index файл для страниц справки.
+
 %package installer-help
 Summary:	DrakX Installer help in all available languages for %distrib_name
+Summary:	Справка по установщику DrakX для всех доступных языков %distrib_name
 Group:		%group
 
 %description installer-help
 
 This package contains the HTML files used as inline help during the
 installation procedure of %distrib_name
+
+%description -l ru installer-help
+
+Этот пакет содержит HTML файлы справки, которая используется в течении процедуры установки %distrib_name
 
 
 %prep
@@ -380,6 +459,80 @@ install -d -m 0755 $DESTDIR/mandriva/pt_br/
 install -d -m 0755 $DESTDIR/mandriva/pt_br/Introducing/
 mv publications/pt_br/Introducing.html $DESTDIR/mandriva/pt_br/Introducing/Introducing.html
 
+#Русский язык
+
+# build menu entry
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-ru.desktop << EOF
+[Desktop Entry]
+Name=%distrib_name Starter Guide in English
+Name[ru]=Стартовое руководство пользователя %distrib_name на русском
+Comment=The %distrib_name manuals in English
+Comment[ru]=Руководство пользователя %distrib_name на русском.
+Exec=%{_bindir}/www-browser %_docdir/mandriva/ru/Mastering-Manual/index.html
+Icon=documentation_section
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Documentation;
+EOF
+
+# install manuals
+install -d -m 0755 $DESTDIR/mandriva/ru/
+install -d -m 0755 $DESTDIR/mandriva/ru/Mastering-Manual/
+mv publications/ru/Mastering-Manual.html $DESTDIR/mandriva/ru/Mastering-Manual/Mastering-Manual.html
+
+#install the DrakX Inline HTML Help
+install -d -m 0755 $DESTDIR/installer-help/ru/
+for f in publications/ru/DrakX-Help.html/*.html; do
+i=$(basename $f | sed -e "s/drakxid-//; s/drakx-//")
+mv $f %buildroot/%_docdir/installer-help/ru/$i
+done
+ln -s ../images  %buildroot/%_docdir/installer-help/ru/images
+# build menu entry
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-ru.desktop << EOF
+[Desktop Entry]
+Name=%distrib_name DrakXTools User Manual in English
+Name[ru]=Руководство пользователя инструментов DrakX %distrib_name
+Comment=The %distrib_name manuals in English
+Comment[ru]=Руководство пользователя %distrib_name на русском.
+Exec=%{_bindir}/www-browser %_docdir/mandriva/ru/Drakxtools-Guide/index.html
+Icon=documentation_section
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Documentation;
+EOF
+
+# install manuals
+install -d -m 0755 $DESTDIR/mandriva/ru/
+install -d -m 0755 $DESTDIR/mandriva/ru/Drakxtools-Guide/
+mv publications/ru/Drakxtools-Guide.html $DESTDIR/mandriva/ru/Drakxtools-Guide/Drakxtools-Guide.html
+
+# build menu entry
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-ru.desktop << EOF
+[Desktop Entry]
+Name=%distrib_name Quick Startup Guide in English
+Name[ru]=Быстрый старт с %distrib_name
+Comment=The %distrib_name manuals in English
+Comment[ru]=Руководство пользователя %distrib_name на русском.
+Exec=%{_bindir}/www-browser %_docdir/mandriva/ru/Introducing/index.html
+Icon=documentation_section
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Documentation;
+EOF
+
+# install manuals
+install -d -m 0755 $DESTDIR/mandriva/ru/
+install -d -m 0755 $DESTDIR/mandriva/ru/Introducing/
+mv publications/ru/Introducing.html $DESTDIR/mandriva/ru/Introducing/Introducing.html
+
+#конец секции
+
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/it/
 for f in publications/it/DrakX-Help.html/*.html; do
@@ -440,6 +593,7 @@ cat > $DESTDIR/mandriva/en/Mastering-Manual/index.html <<EOF
 </body>
 </html>
 EOF
+
 # build HTML index file
 cat > $DESTDIR/mandriva/en/Drakxtools-Guide/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -502,6 +656,106 @@ cat > $DESTDIR/mandriva/en/Introducing/index.html <<EOF
 </body>
 </html>
 EOF
+
+#rus
+
+# build HTML index file
+cat > $DESTDIR/mandriva/ru/Mastering-Manual/index.html <<EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<center>
+<img src="../../images/MDKlinux.png" border="0">
+<br/><br/>
+<table style="width: 80%;" >
+  <tbody>
+    <tr>
+    <a href="Mastering-Manual.html/index.html">
+      <img src="../../images/manuel-face.png" align="center" border="0">
+       HTML</a>
+    </tr>
+<!--
+    <tr>
+      <a href="Mastering-Manual.pdf">
+      <img src="../../images/manuel-face.png" align="center" border="0"> 
+      PDF</a>
+      </tr>
+-->
+    </tbody>
+  </table>
+</center>
+</body>
+</html>
+EOF
+
+# build HTML index file
+cat > $DESTDIR/mandriva/ru/Drakxtools-Guide/index.html <<EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<center>
+<img src="../../images/MDKlinux.png" border="0">
+<br/><br/>
+<table style="width: 80%;" >
+  <tbody>
+    <tr>
+    <a href="Drakxtools-Guide.html/index.html">
+      <img src="../../images/manuel-face.png" align="center" border="0">
+       HTML</a>
+    </tr>
+<!--
+    <tr>
+      <a href="Drakxtools-Guide.pdf">
+      <img src="../../images/manuel-face.png" align="center" border="0"> 
+      PDF</a>
+      </tr>
+-->
+    </tbody>
+  </table>
+</center>
+</body>
+</html>
+EOF
+# build HTML index file
+cat > $DESTDIR/mandriva/ru/Introducing/index.html <<EOF
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<center>
+<img src="../../images/MDKlinux.png" border="0">
+<br/><br/>
+<table style="width: 80%;" >
+  <tbody>
+    <tr>
+    <a href="Introducing.html/index.html">
+      <img src="../../images/manuel-face.png" align="center" border="0">
+       HTML</a>
+    </tr>
+<!--
+    <tr>
+      <a href="Introducing.pdf">
+      <img src="../../images/manuel-face.png" align="center" border="0"> 
+      PDF</a>
+      </tr>
+-->
+    </tbody>
+  </table>
+</center>
+</body>
+</html>
+EOF
+
+#end rus
+
 # build HTML index file
 cat > $DESTDIR/mandriva/fr/Mastering-Manual/index.html <<EOF
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -689,6 +943,21 @@ rm -fr %buildroot
 %postun Introducing-en
 %{clean_menus}
 
+%post Mastering-Manual-ru
+%{update_menus}
+%postun Mastering-Manual-ru
+%{clean_menus}
+
+%post Drakxtools-Guide-ru
+%{update_menus}
+%postun Drakxtools-Guide-ru
+%{clean_menus}
+
+%post Introducing-ru
+%{update_menus}
+%postun Introducing-ru
+%{clean_menus}
+
 %post Mastering-Manual-fr
 %{update_menus}
 %postun Mastering-Manual-fr
@@ -750,6 +1019,24 @@ rm -fr %buildroot
 %dir %_docdir/mandriva/en/Introducing
 %doc %_docdir/mandriva/en/Introducing/*
 
+%files Mastering-Manual-ru
+%defattr(-,root,root)
+%{_datadir}/applications/%name-Mastering-Manual-ru.desktop
+%dir %_docdir/mandriva/ru/Mastering-Manual
+%doc %_docdir/mandriva/ru/Mastering-Manual/*
+
+%files Drakxtools-Guide-ru
+%defattr(-,root,root)
+%{_datadir}/applications/%name-Drakxtools-Guide-ru.desktop
+%dir %_docdir/mandriva/ru/Drakxtools-Guide
+%doc %_docdir/mandriva/ru/Drakxtools-Guide/*
+
+%files Introducing-ru
+%defattr(-,root,root)
+%{_datadir}/applications/%name-Introducing-ru.desktop
+%dir %_docdir/mandriva/ru/Introducing
+%doc %_docdir/mandriva/ru/Introducing/*
+
 %files Mastering-Manual-fr
 %defattr(-,root,root)
 %{_datadir}/applications/%name-Mastering-Manual-fr.desktop
@@ -781,6 +1068,4 @@ rm -fr %buildroot
 %doc %_docdir/mandriva/pt_br/Introducing/*
 
 
-
 %changelog
-
