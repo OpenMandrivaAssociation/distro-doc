@@ -34,10 +34,6 @@ BuildRequires:  locales-ru
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the menus.
 
-%description -l ru
-Этот пакет содержит полезную документацию для %distrib_name.
-Эта документация доступна напрямую через пункты меню.
-
 
 %package Mastering-Manual-en
 Summary:        The %distrib_name manuals in English
@@ -104,10 +100,6 @@ Provides:       mandrake-doc-Mastering-Manual-ru = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%description -l ru Mastering-Manual-ru
-Этот пакет содержит полезную документацию для %distrib_name.
-Эта документация доступна напрямую через пункты меню.
-
 
 %package Drakxtools-Guide-ru
 Summary:        The %distrib_name manuals in English
@@ -126,10 +118,6 @@ Provides:       mandrake-doc-Drakxtools-Guide-ru = %version
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-%description -l ru Drakxtools-Guide-ru
-Этот пакет содержит полезную документацию для %distrib_name.
-Эта документация доступна напрямую через пункты меню.
-
 %package Introducing-ru
 Summary:        The %distrib_name manuals in English
 Summary(ru):	Руководство пользователя на русском
@@ -146,10 +134,6 @@ Provides:       mandrake-doc-Introducing-ru = %version
 %description Introducing-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
-
-%description -l ru Introducing-ru
-Этот пакет содержит полезную документацию для %distrib_name.
-Эта документация доступна напрямую через пункты меню.
 
 %package Mastering-Manual-fr
 Summary:        The %distrib_name manuals in French
@@ -232,8 +216,6 @@ This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 
-
-
 %package common
 Summary:	Common data for all %distrib_name specific documentation
 Summary(ru): Общие данные для всех документов %distrib_name
@@ -250,10 +232,6 @@ This package contains common icons and images for all %distrib_name
 specific documentation, plus the index file matching Help IDs to HTML
 help pages.
 
-%description -l ru common
-Этоьт пакет содержит иконки и картинки для всех документов %distrib_name
-плюс index файл для страниц справки.
-
 %package installer-help
 Summary:	DrakX Installer help in all available languages for %distrib_name
 Summary:	Справка по установщику DrakX для всех доступных языков %distrib_name
@@ -263,11 +241,6 @@ Group:		%group
 
 This package contains the HTML files used as inline help during the
 installation procedure of %distrib_name
-
-%description -l ru installer-help
-
-Этот пакет содержит HTML файлы справки, которая используется в течении процедуры установки %distrib_name
-
 
 %prep
 
@@ -459,8 +432,6 @@ install -d -m 0755 $DESTDIR/mandriva/pt_br/
 install -d -m 0755 $DESTDIR/mandriva/pt_br/Introducing/
 mv publications/pt_br/Introducing.html $DESTDIR/mandriva/pt_br/Introducing/Introducing.html
 
-#Русский язык
-
 # build menu entry
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-ru.desktop << EOF
@@ -530,8 +501,6 @@ EOF
 install -d -m 0755 $DESTDIR/mandriva/ru/
 install -d -m 0755 $DESTDIR/mandriva/ru/Introducing/
 mv publications/ru/Introducing.html $DESTDIR/mandriva/ru/Introducing/Introducing.html
-
-#конец секции
 
 #install the DrakX Inline HTML Help
 install -d -m 0755 $DESTDIR/installer-help/it/
