@@ -114,7 +114,7 @@ Provides:       mandrake-doc-drakxtools-ru = %version
 Obsoletes:      mandrake-doc-Drakxtools-Guide-ru
 Provides:       mandrake-doc-Drakxtools-Guide-ru = %version
 
-%description Drakxtools-Guide-en
+%description Drakxtools-Guide-ru
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
@@ -131,7 +131,7 @@ Provides:       mandrake-doc-ru = %version
 Obsoletes:      mandrake-doc-Introducing-ru
 Provides:       mandrake-doc-Introducing-ru = %version
 
-%description Introducing-en
+%description Introducing-ru
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
