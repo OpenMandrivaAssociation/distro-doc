@@ -260,8 +260,8 @@ install -d -m 0755 $DESTDIR/mandriva/images/
 
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-en.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Mastering-Manual-en.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Starter Guide in English
 Comment=The %distrib_name manuals in English
@@ -286,8 +286,8 @@ mv $f %buildroot/%_docdir/installer-help/en/$i
 done
 ln -s ../images  %buildroot/%_docdir/installer-help/en/images
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-en.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Drakxtools-Guide-en.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name DrakXTools User Manual in English
 Comment=The %distrib_name manuals in English
@@ -305,8 +305,8 @@ install -d -m 0755 $DESTDIR/mandriva/en/Drakxtools-Guide/
 mv publications/en/Drakxtools-Guide.html $DESTDIR/mandriva/en/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-en.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Introducing-en.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in English
 Comment=The %distrib_name manuals in English
@@ -324,8 +324,8 @@ install -d -m 0755 $DESTDIR/mandriva/en/Introducing/
 mv publications/en/Introducing.html $DESTDIR/mandriva/en/Introducing/Introducing.html
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-fr.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Mastering-Manual-fr.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Starter Guide in French
 Comment=The %distrib_name manuals in French
@@ -350,8 +350,8 @@ mv $f %buildroot/%_docdir/installer-help/fr/$i
 done
 ln -s ../images  %buildroot/%_docdir/installer-help/fr/images
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-fr.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Drakxtools-Guide-fr.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name DrakXTools User Manual in French
 Comment=The %distrib_name manuals in French
@@ -369,8 +369,8 @@ install -d -m 0755 $DESTDIR/mandriva/fr/Drakxtools-Guide/
 mv publications/fr/Drakxtools-Guide.html $DESTDIR/mandriva/fr/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-fr.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Introducing-fr.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in French
 Comment=The %distrib_name manuals in French
@@ -395,8 +395,8 @@ mv $f %buildroot/%_docdir/installer-help/pt_br/$i
 done
 ln -s ../images  %buildroot/%_docdir/installer-help/pt_br/images
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-pt_br.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Drakxtools-Guide-pt_br.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name DrakXTools User Manual in Brazilian Portuguese
 Comment=The %distrib_name manuals in Brazilian Portuguese
@@ -414,8 +414,8 @@ install -d -m 0755 $DESTDIR/mandriva/pt_br/Drakxtools-Guide/
 mv publications/pt_br/Drakxtools-Guide.html $DESTDIR/mandriva/pt_br/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-pt_br.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Introducing-pt_br.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in Brazilian Portuguese
 Comment=The %distrib_name manuals in Brazilian Portuguese
@@ -433,8 +433,8 @@ install -d -m 0755 $DESTDIR/mandriva/pt_br/Introducing/
 mv publications/pt_br/Introducing.html $DESTDIR/mandriva/pt_br/Introducing/Introducing.html
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Mastering-Manual-ru.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Mastering-Manual-ru.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Starter Guide in English
 Name[ru]=Стартовое руководство пользователя %distrib_name на русском
@@ -461,8 +461,8 @@ mv $f %buildroot/%_docdir/installer-help/ru/$i
 done
 ln -s ../images  %buildroot/%_docdir/installer-help/ru/images
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Drakxtools-Guide-ru.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Drakxtools-Guide-ru.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name DrakXTools User Manual in English
 Name[ru]=Руководство пользователя инструментов DrakX %distrib_name
@@ -482,8 +482,8 @@ install -d -m 0755 $DESTDIR/mandriva/ru/Drakxtools-Guide/
 mv publications/ru/Drakxtools-Guide.html $DESTDIR/mandriva/ru/Drakxtools-Guide/Drakxtools-Guide.html
 
 # build menu entry
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/%{name}-Introducing-ru.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}-Introducing-ru.desktop << EOF
 [Desktop Entry]
 Name=%distrib_name Quick Startup Guide in English
 Name[ru]=Быстрый старт с %distrib_name
