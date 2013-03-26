@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2010.1
-Release:	%mkrel 1.1
+Release:	1.2
 
 License:	Open Publication License
 Group:		%group
@@ -16,15 +16,14 @@ Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
 Source0:	%name.tar.bz2
 Source1:	%name-%version.tar.bz2
 
-Buildroot:	%_tmppath/%name-%version-%release-root
 BuildArch:	noarch
-BuildRequires:  wget
-BuildRequires:  locales-en
-BuildRequires:  locales-fr
-BuildRequires:  locales-pt
-BuildRequires:  locales-it
-BuildRequires:  locales-de
-BuildRequires:  locales-es
+BuildRequires:	wget
+BuildRequires:	locales-en
+BuildRequires:	locales-fr
+BuildRequires:	locales-pt
+BuildRequires:	locales-it
+BuildRequires:	locales-de
+BuildRequires:	locales-es
 
 
 %define LANGS en fr pt_br it de es
@@ -35,144 +34,141 @@ This documentation is directly accessible through the menus.
 
 
 %package Mastering-Manual-en
-Summary:        The %distrib_name manuals in English
-Group:          %group
-Requires:       locales-en
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-drakxtools-en
-Provides:       mandriva-doc-Discovery-en = %version
-Obsoletes:      mandriva-doc-Discovery-en                                                                                                                                                            
-Provides:       mandriva-doc-Discovery-en = %version
-Obsoletes:      mandrake-doc-Mastering-Manual-en
-Provides:       mandrake-doc-Mastering-Manual-en = %version
+Summary:		The %distrib_name manuals in English
+Group:			%group
+Requires:		locales-en
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-drakxtools-en
+Provides:		mandriva-doc-Discovery-en = %{version}-%{release}
+Obsoletes:		mandriva-doc-Discovery-en < %{version}-%{release}                                                                                                                                    
+Provides:		mandriva-doc-Discovery-en = %{version}-%{release}
+Obsoletes:		mandrake-doc-Mastering-Manual-en < %{version}-%{release}
+Provides:		mandrake-doc-Mastering-Manual-en = %{version}-%{release}
 
 %description Mastering-Manual-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Drakxtools-Guide-en
-Summary:        The %distrib_name manuals in English
-Group:          %group
-Requires:       locales-en
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-drakxtools-en
-Provides:       mandrake_doc-drakxtools-en = %version
-Obsoletes:      mandrake-doc-drakxtools-en
-Provides:       mandrake-doc-drakxtools-en = %version
-Obsoletes:      mandrake-doc-Drakxtools-Guide-en
-Provides:       mandrake-doc-Drakxtools-Guide-en = %version
+Summary:		The %distrib_name manuals in English
+Group:			%group
+Requires:		locales-en
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-drakxtools-en < %{version}-%{release}
+Provides:		mandrake_doc-drakxtools-en = %{version}-%{release}
+Obsoletes:		mandrake-doc-drakxtools-en < %{version}-%{release}
+Provides:		mandrake-doc-drakxtools-en = %{version}-%{release}
+Obsoletes:		mandrake-doc-Drakxtools-Guide-en < %{version}-%{release}
+Provides:		mandrake-doc-Drakxtools-Guide-en = %{version}-%{release}
 
 %description Drakxtools-Guide-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Introducing-en
-Summary:        The %distrib_name manuals in English
-Group:          %group
-Requires:       locales-en
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-en
-Provides:       mandrake_doc-en = %version
-Obsoletes:      mandrake-doc-en
-Provides:       mandrake-doc-en = %version
-Obsoletes:      mandrake-doc-Introducing-en
-Provides:       mandrake-doc-Introducing-en = %version
+Summary:		The %distrib_name manuals in English
+Group:			%group
+Requires:		locales-en
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-en < %{version}-%{release}
+Provides:		mandrake_doc-en = %{version}-%{release}
+Obsoletes:		mandrake-doc-en < %{version}-%{release}
+Provides:		mandrake-doc-en = %{version}-%{release}
+Obsoletes:		mandrake-doc-Introducing-en < %{version}-%{release}
+Provides:		mandrake-doc-Introducing-en = %{version}-%{release}
 
 %description Introducing-en
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Mastering-Manual-fr
-Summary:        The %distrib_name manuals in French
-Group:          %group
-Requires:       locales-fr
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-drakxtools-fr
-Provides:       mandriva-doc-Discovery-fr = %version
-Obsoletes:      mandriva-doc-Discovery-fr                                                                                                                                                            
-Provides:       mandriva-doc-Discovery-fr = %version
-Obsoletes:      mandrake-doc-Mastering-Manual-fr
-Provides:       mandrake-doc-Mastering-Manual-fr = %version
+Summary:		The %distrib_name manuals in French
+Group:			%group
+Requires:		locales-fr
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-drakxtools-fr < %{version}-%{release}
+Provides:		mandriva-doc-Discovery-fr = %{version}-%{release}
+Obsoletes:		mandriva-doc-Discovery-fr < %{version}-%{release}                                                                                                                                                 
+Provides:		mandriva-doc-Discovery-fr = %{version}-%{release}
+Obsoletes:		mandrake-doc-Mastering-Manual-fr < %{version}-%{release}
+Provides:		mandrake-doc-Mastering-Manual-fr = %{version}-%{release}
 
 %description Mastering-Manual-fr
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Drakxtools-Guide-fr
-Summary:        The %distrib_name manuals in French
-Group:          %group
-Requires:       locales-fr
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-drakxtools-fr
-Provides:       mandrake_doc-drakxtools-fr = %version
-Obsoletes:      mandrake-doc-drakxtools-fr
-Provides:       mandrake-doc-drakxtools-fr = %version
-Obsoletes:      mandrake-doc-Drakxtools-Guide-fr
-Provides:       mandrake-doc-Drakxtools-Guide-fr = %version
+Summary:		The %distrib_name manuals in French
+Group:			%group
+Requires:		locales-fr
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-drakxtools-fr < %{version}-%{release}
+Provides:		mandrake_doc-drakxtools-fr = %{version}-%{release}
+Obsoletes:		mandrake-doc-drakxtools-fr < %{version}-%{release}
+Provides:		mandrake-doc-drakxtools-fr = %{version}-%{release}
+Obsoletes:		mandrake-doc-Drakxtools-Guide-fr < %{version}-%{release}
+Provides:		mandrake-doc-Drakxtools-Guide-fr = %{version}-%{release}
 
 %description Drakxtools-Guide-fr
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Introducing-fr
-Summary:        The %distrib_name manuals in French
-Group:          %group
-Requires:       locales-fr
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-fr
-Provides:       mandrake_doc-fr = %version
-Obsoletes:      mandrake-doc-fr
-Provides:       mandrake-doc-fr = %version
-Obsoletes:      mandrake-doc-Introducing-fr
-Provides:       mandrake-doc-Introducing-fr = %version
+Summary:		The %distrib_name manuals in French
+Group:			%group
+Requires:		locales-fr
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-fr < %{version}-%{release}
+Provides:		mandrake_doc-fr = %{version}-%{release}
+Obsoletes:		mandrake-doc-fr < %{version}-%{release}
+Provides:		mandrake-doc-fr = %{version}-%{release}
+Obsoletes:		mandrake-doc-Introducing-fr < %{version}-%{release}
+Provides:		mandrake-doc-Introducing-fr = %{version}-%{release}
 
 %description Introducing-fr
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Drakxtools-Guide-pt_br
-Summary:        The %distrib_name manuals in Brazilian Portuguese
-Group:          %group
-Requires:       locales-pt
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-drakxtools-pt_br
-Provides:       mandrake_doc-drakxtools-pt_br = %version
-Obsoletes:      mandrake-doc-drakxtools-pt_br
-Provides:       mandrake-doc-drakxtools-pt_br = %version
-Obsoletes:      mandrake-doc-Drakxtools-Guide-pt_br
-Provides:       mandrake-doc-Drakxtools-Guide-pt_br = %version
+Summary:		The %distrib_name manuals in Brazilian Portuguese
+Group:			%group
+Requires:		locales-pt
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-drakxtools-pt_br < %{version}-%{release}
+Provides:		mandrake_doc-drakxtools-pt_br = %{version}-%{release}
+Obsoletes:		mandrake-doc-drakxtools-pt_br < %{version}-%{release}
+Provides:		mandrake-doc-drakxtools-pt_br = %{version}-%{release}
+Obsoletes:		mandrake-doc-Drakxtools-Guide-pt_br < %{version}-%{release}
+Provides:		mandrake-doc-Drakxtools-Guide-pt_br = %{version}-%{release}
 
 %description Drakxtools-Guide-pt_br
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
 %package Introducing-pt_br
-Summary:        The %distrib_name manuals in Brazilian Portuguese
-Group:          %group
-Requires:       locales-pt
-Requires:       mandriva-doc-common >= %version-%release
-Obsoletes:      mandrake_doc-pt_br
-Provides:       mandrake_doc-pt_br = %version
-Obsoletes:      mandrake-doc-pt_br
-Provides:       mandrake-doc-pt_br = %version
-Obsoletes:      mandrake-doc-Introducing-pt_br
-Provides:       mandrake-doc-Introducing-pt_br = %version
+Summary:		The %distrib_name manuals in Brazilian Portuguese
+Group:			%group
+Requires:		locales-pt
+Requires:		mandriva-doc-common >= %{version}-%{release}
+Obsoletes:		mandrake_doc-pt_br <%{version}-%{release}
+Provides:		mandrake_doc-pt_br = %{version}-%{release}
+Obsoletes:		mandrake-doc-pt_br < %{version}-%{release}
+Provides:		mandrake-doc-pt_br = %{version}-%{release}
+Obsoletes:		mandrake-doc-Introducing-pt_br < %{version}-%{release}
+Provides:		mandrake-doc-Introducing-pt_br = %{version}-%{release}
 
 %description Introducing-pt_br
 This package contains some useful documentation for %distrib_name systems.
 This documentation is directly accessible through the main menu.
 
-
-
-
 %package common
 Summary:	Common data for all %distrib_name specific documentation
 Group:		%group
 Conflicts:	mandrake_doc < 9.2
-Obsoletes: 	mandrake_doc-common
-Provides:	mandrake_doc-common
-Obsoletes: 	mandrake-doc-common
-Provides:	mandrake-doc-common
+Obsoletes:	mandrake_doc-common < %{version}-%{release}
+Provides:	mandrake_doc-common = %{version}-%{release}
+Obsoletes:	mandrake-doc-common < %{version}-%{release}
+Provides:	mandrake-doc-common = %{version}-%{release}
 
 %description common
 
@@ -185,20 +181,15 @@ Summary:	DrakX Installer help in all available languages for %distrib_name
 Group:		%group
 
 %description installer-help
-
 This package contains the HTML files used as inline help during the
-installation procedure of %distrib_name
+installation procedure of %distrib_name.
 
 
 %prep
-
 %setup -q -c %name-%version -a 1
 
 
 %install
-rm -fr %buildroot
-
-
 install -d -m 0755 %buildroot/%_menudir
 DESTDIR=%buildroot/%{_docdir}
 
@@ -670,53 +661,6 @@ for i in mandriva-doc/images/*; do
   install -m 0644 $i %buildroot/%_docdir/mandriva/images/
 done
 
-%clean
-rm -fr %buildroot
-
-
-%post Mastering-Manual-en
-%{update_menus}
-%postun Mastering-Manual-en
-%{clean_menus}
-
-%post Drakxtools-Guide-en
-%{update_menus}
-%postun Drakxtools-Guide-en
-%{clean_menus}
-
-%post Introducing-en
-%{update_menus}
-%postun Introducing-en
-%{clean_menus}
-
-%post Mastering-Manual-fr
-%{update_menus}
-%postun Mastering-Manual-fr
-%{clean_menus}
-
-%post Drakxtools-Guide-fr
-%{update_menus}
-%postun Drakxtools-Guide-fr
-%{clean_menus}
-
-%post Introducing-fr
-%{update_menus}
-%postun Introducing-fr
-%{clean_menus}
-
-%post Drakxtools-Guide-pt_br
-%{update_menus}
-%postun Drakxtools-Guide-pt_br
-%{clean_menus}
-
-%post Introducing-pt_br
-%{update_menus}
-%postun Introducing-pt_br
-%{clean_menus}
-
-
-
-
 %files common
 %defattr(-,root,root)
 %dir %_docdir/mandriva/
@@ -779,10 +723,6 @@ rm -fr %buildroot
 %{_datadir}/applications/%name-Introducing-pt_br.desktop
 %dir %_docdir/mandriva/pt_br/Introducing
 %doc %_docdir/mandriva/pt_br/Introducing/*
-
-
-
-
 
 %changelog
 * Tue May 25 2010 Anne Nicolas <anne.nicolas@mandriva.com> 2010.1-1.0mdv2010.1
