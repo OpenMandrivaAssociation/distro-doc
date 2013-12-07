@@ -7,7 +7,7 @@
 Name:		mandriva-doc
 Summary:	%distrib_name documentation
 Version:	2010.1
-Release:	1.3
+Release:	1.4
 
 License:	Open Publication License
 Group:		%group
