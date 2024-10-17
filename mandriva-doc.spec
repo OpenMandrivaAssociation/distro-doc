@@ -11,7 +11,7 @@ Release:	1.10
 
 License:	Open Publication License
 Group:		%group
-Url:		http://wiki.mandriva.com/en/Development/Tasks/Documentation
+Url:		https://wiki.mandriva.com/en/Development/Tasks/Documentation
 
 Source0:	%name.tar.bz2
 Source1:	%name-%version.tar.bz2
